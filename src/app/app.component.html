@@ -1,4 +1,56 @@
-<h1 style="text-align: center;">Fun of Heuristic</h1>
-<button routerLink = "/home">Home</button>
-<button routerLink = "/login">Login</button>
-<router-outlet></router-outlet>
+<header>Space X Launch Porgrams</header>
+<div class="container">
+    <div class="left-panel">
+        <div>Filters</div>
+        <div class="left-panel-sections">
+            <div>Launch Year</div>
+            <div class="button-container">
+                <button *ngFor="let year of launchYears"class="btn-class">{{year}}</button>
+            </div>
+        </div>
+        <div class="left-panel-sections">
+            <div>Successful Launch</div>
+            <div class="button-container">
+                <button class="btn-class">True</button>
+                <button class="btn-class">False</button>
+            </div>
+        </div>
+        <div class="left-panel-sections">
+            <div>Successful Landing</div>
+            <div class="button-container">
+                <button class="btn-class">True</button>
+                <button class="btn-class">False</button>
+            </div>
+        </div>
+       
+    </div>
+    <div class="right-panel">
+        <div class="card" *ngFor="let program of programs">
+            <div class="image-container">
+                <img class="image-class" [src]="program.links.mission_patch_small">
+            </div>
+            <div class="detail-container">
+                <div class="mission-name">{{program.mission_name}}</div>
+                <div class="mission-ids">Mission Ids:</div>
+                <ul>
+                    <li *ngFor="let missionid of program.mission_id">{{missionid}}</li>
+                </ul>
+                <div class="launch-detail-container">
+                    <div class="label">Launch Year:</div>
+                    <div class="value">{{program.launch_year}}</div>              
+                </div>
+                <div class="launch-detail-container">
+                    <div class="label">Successful Launch:</div>
+                    <div class="value">{{program.launch_success}}</div>              
+                </div>
+                <div class="launch-detail-container">
+                    <div class="label">Succesful Landing:</div>
+                    <div class="value">{{program.launch_landing}}</div>              
+                </div>
+                
+            </div>               
+        </div>
+    </div>
+</div>
+<footer>Developed by: Paras</footer>
+

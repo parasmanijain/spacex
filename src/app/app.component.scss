@@ -1,0 +1,145 @@
+header {
+  top: 0px;
+}
+
+footer {
+  bottom: 0px;
+}
+
+header,
+footer {
+  height: 50px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.container {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  top: 50px;
+  bottom: 50px;
+  width: 100%;
+  height: calc(100vh - 100px);
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.left-panel {
+  flex: 0 1 200px;
+  background-color: #fefefe;
+  margin: 0px 10px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-panel-sections {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.btn-class {
+  color: black;
+  background-color: #b9e481;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.btn-class:hover {
+  cursor: pointer;
+}
+
+.right-panel {
+  flex: 3 3;
+  height: 100%;
+  margin: 0px 10px;
+  overflow: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.card {
+  background-color: #fefefe;
+  min-height: 350px;
+  width: calc(25% - 20px);
+  margin: 0px 10px 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 100%;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-class {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+  .left-panel,
+  .right-panel {
+    width: 70%;
+    margin: 20px 0px;
+  }
+
+  .card {
+    width: 100%;
+    margin: 10px 0px;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1024px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+
+  .card:first-child,
+  .card:nth-child(2) {
+    margin: 0px 10px 20px;
+  }
+}
