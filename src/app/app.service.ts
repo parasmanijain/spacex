@@ -9,7 +9,7 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  getData() {
+  getData(): Observable<any> {
     return this.http.get('https://api.spaceXdata.com/v3/launches?limit=100');
   }
 }

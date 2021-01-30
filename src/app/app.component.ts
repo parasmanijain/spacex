@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app/app.service';
+import { IMission } from './interfaces/Mission';
 
 @Component({
   selector: 'app-root',
@@ -8,20 +9,24 @@ import { AppService } from '../app/app.service';
 })
 export class AppComponent implements OnInit{
   title = 'SpaceX';
-  programs = [];
-  launchYears = [];
+  programs = Array<IMission>();
+  launchYears: any;
 
   constructor(private appService: AppService) {
   }
 
-  ngOnInit() {
-    let set = new Set();
+  ngOnInit(): void {
+    let mission: IMission;
+    const set = new Set();
     this.appService.getData().subscribe(res => {
-      this.programs = res;
-      this.launchYears = this.programs.forEach(program => {
-        set.add(program.launch_year)
-      });
-      this.launchYears = [... set];
+      if (res && res.length) {
+        res.forEach((program: IMission) => {
+          mission = program;
+          this.programs.push(mission);
+          set.add(mission.launch_year);
+        });
+        this.launchYears = [...set];
+      }
     },
     err => {
       console.log(err);
