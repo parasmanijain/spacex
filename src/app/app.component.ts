@@ -24,10 +24,12 @@ export class AppComponent implements OnInit{
               private activatedRoute: ActivatedRoute,
               private location: Location, private router: Router) {
                 this.fetchYear();
-                const url = new URL(window.location.href);
-                this.launchPressed = url.searchParams.get('launch_success');
-                this.landingPressed = url.searchParams.get('land_success');
-                this.yearPressed = url.searchParams.get('launch_year');
+                if (typeof window !== 'undefined') {
+                  const url = new URL(window.location.href);
+                  this.launchPressed = url.searchParams.get('launch_success');
+                  this.landingPressed = url.searchParams.get('land_success');
+                  this.yearPressed = url.searchParams.get('launch_year');
+                }
                 if (this.launchPressed !== null) {
                       this.appService.launchPressed.next(this.launchPressed);
                       this.queryParams = {...this.queryParams, launch_success: this.launchPressed};
