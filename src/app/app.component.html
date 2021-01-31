@@ -1,36 +1,41 @@
 <header>Space X Launch Programs</header>
-<div class="container">
+<div class="main-container">
     <div class="left-panel">
         <div class="left-panel-heading">Filters</div>
         <div class="control-sections">
-            <app-loader *ngIf="isLoading"></app-loader>
+            <app-loader *ngIf="isLoadingYear"></app-loader>
             <div class="left-panel-sections">
                 <div class="left-panel-sections-heading">Launch Year</div>
                 <div class="button-container">
-                    <button *ngFor="let year of launchYears"class="btn-class">{{year}}</button>
+                        <button (click)="yearFilter(year)" [ngClass]="yearPressed === year ? 'pressed': ''"
+                        *ngFor="let year of launchYears"class="launch-button btn-class">{{year}}</button>
                 </div>
             </div>
             <div class="left-panel-sections">
                 <div class="left-panel-sections-heading">Successful Launch</div>
                 <div class="button-container">
-                    <button class="btn-class">True</button>
-                    <button class="btn-class">False</button>
+                        <button (click)="launchFilter(true)" [ngClass]="launchPressed === true ? 'pressed': ''"
+                        class="btn-class">True</button>
+                        <button (click)="launchFilter(false)" [ngClass]="launchPressed === false ? 'pressed': ''"
+                        class="btn-class">False</button>
                 </div>
             </div>
             <div class="left-panel-sections">
                 <div class="left-panel-sections-heading">Successful Landing</div>
                 <div class="button-container">
-                    <button class="btn-class">True</button>
-                    <button class="btn-class">False</button>
+                        <button (click)="landingFilter(true)" [ngClass]="landingPressed === true ? 'pressed': ''"
+                        class="btn-class">True</button>
+                        <button (click)="landingFilter(false)" [ngClass]="landingPressed === false ? 'pressed': ''"
+                        class="btn-class">False</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="right-panel">
-        <app-loader *ngIf="isLoading"></app-loader>
+        <app-loader *ngIf="isLoadingData"></app-loader>
         <div class="card" *ngFor="let program of programs">
             <div class="image-container">
-                <img class="image-class" [src]="program.links.mission_patch_small">
+                <img class="image-class" loading="lazy" [src]="program.links.mission_patch_small">
             </div>
             <div class="detail-container">
                 <div class="mission-name">{{program.mission_name}} # {{program.flight_number}}</div>

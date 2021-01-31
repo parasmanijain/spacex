@@ -18,7 +18,7 @@ footer {
   font-weight: 700;
 }
 
-.container {
+.main-container {
   position: relative;
   display: flex;
   top: 50px;
@@ -53,7 +53,6 @@ footer {
       justify-content: space-between;
       align-items: center;
       flex-direction: column;
-      width: 100%;
       .left-panel-sections-heading {
         border-bottom: 1px solid #4b4e4e;
         font-size: 12px;
@@ -63,21 +62,25 @@ footer {
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        width: 100%;
         flex-wrap: wrap;
+        width: 100%;
         .btn-class {
           color: black;
           background-color: #b9e481;
           border-radius: 5px;
           padding: 5px;
-          margin: 10px;
+          margin: 10px auto;
           &:hover {
             cursor: pointer;
           }
         }
+        .pressed {
+          background-color: #3fe639 !important;
+        }
       }
     }
   }
+
   .right-panel {
     flex: 3 3;
     height: 100%;
@@ -125,12 +128,12 @@ footer {
 }
 
 @media only screen and (max-width: 700px) {
-  .container {
+  .main-container {
     flex-direction: column;
     align-items: center;
     .left-panel,
     .right-panel {
-      width: 70%;
+      width: 80%;
       margin: 20px 0px;
     }
     .right-panel {
