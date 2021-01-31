@@ -5,4 +5,5 @@ export interface IMission {
     launch_success: boolean;
     launch_landing: string;
     links: any;
+    flight_number: number;
 }
