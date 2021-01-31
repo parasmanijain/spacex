@@ -8,7 +8,7 @@ footer {
 
 header,
 footer {
-  height: 50px;
+  height: 35px;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -21,11 +21,11 @@ footer {
 .main-container {
   position: relative;
   display: flex;
-  top: 50px;
-  bottom: 50px;
+  top: 35px;
+  bottom: 35px;
   width: 100%;
   height: auto;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 70px);
   justify-content: space-between;
   flex-direction: row;
   margin: 0 auto;
@@ -133,10 +133,14 @@ footer {
     align-items: center;
     .left-panel,
     .right-panel {
-      width: 80%;
-      margin: 20px 0px;
+      width: 70%;
+      margin: 5px 0px;
+    }
+    .left-panel {
+      margin-top: 0px !important;
     }
     .right-panel {
+      margin-bottom: 0px !important;
       .card {
         width: 100%;
         margin: 10px 0px;
