@@ -2,31 +2,32 @@
 <div class="container">
     <div class="left-panel">
         <div>Filters</div>
-        <div class="left-panel-sections">
-            <div class="left-panel-sections-heading">Launch Year</div>
-            <div class="loader" *ngIf="isLoading">Loading...</div>
-            <div class="button-container">
-                <button *ngFor="let year of launchYears"class="btn-class">{{year}}</button>
+        <div class="control-sections">
+            <app-loader *ngIf="isLoading"></app-loader>
+            <div class="left-panel-sections">
+                <div class="left-panel-sections-heading">Launch Year</div>
+                <div class="button-container">
+                    <button *ngFor="let year of launchYears"class="btn-class">{{year}}</button>
+                </div>
+            </div>
+            <div class="left-panel-sections">
+                <div class="left-panel-sections-heading">Successful Launch</div>
+                <div class="button-container">
+                    <button class="btn-class">True</button>
+                    <button class="btn-class">False</button>
+                </div>
+            </div>
+            <div class="left-panel-sections">
+                <div class="left-panel-sections-heading">Successful Landing</div>
+                <div class="button-container">
+                    <button class="btn-class">True</button>
+                    <button class="btn-class">False</button>
+                </div>
             </div>
         </div>
-        <div class="left-panel-sections">
-            <div class="left-panel-sections-heading">Successful Launch</div>
-            <div class="button-container">
-                <button class="btn-class">True</button>
-                <button class="btn-class">False</button>
-            </div>
-        </div>
-        <div class="left-panel-sections">
-            <div class="left-panel-sections-heading">Successful Landing</div>
-            <div class="button-container">
-                <button class="btn-class">True</button>
-                <button class="btn-class">False</button>
-            </div>
-        </div>
-       
     </div>
     <div class="right-panel">
-        <div class="loader" *ngIf="isLoading">Loading...</div>
+        <app-loader *ngIf="isLoading"></app-loader>
         <div class="card" *ngFor="let program of programs">
             <div class="image-container">
                 <img class="image-class" [src]="program.links.mission_patch_small">

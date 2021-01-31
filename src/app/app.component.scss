@@ -25,197 +25,120 @@ footer {
   top: 50px;
   bottom: 50px;
   width: 100%;
+  height: auto;
   height: calc(100vh - 100px);
   justify-content: space-between;
   flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.left-panel {
-  flex: 0 1 200px;
-  background-color: #fefefe;
-  margin: 0px 10px;
-  height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.left-panel-sections {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-}
-
-.left-panel-sections-heading {
-  border-bottom: 1px solid #4b4e4e;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.btn-class {
-  color: black;
-  background-color: #b9e481;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 10px;
-}
-
-.btn-class:hover {
-  cursor: pointer;
-}
-
-.right-panel {
-  flex: 3 3;
-  height: 100%;
-  margin: 0px 10px;
-  overflow: auto;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.card {
-  background-color: #fefefe;
-  height: 350px;
-  width: calc(25% - 20px);
-  margin: 0px 10px 20px;
-  padding: 10px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50%;
-  width: 100%;
-  background-color: #ece6e6;
-}
-
-.detail-container {
-  height: 50%;
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
   align-items: flex-start;
-  justify-content: center;
-}
-
-.image-class {
-  width: 100%;
-  height: 100%;
-}
-
-.launch-detail-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.loader {
-  font-size: 10px;
-  margin: 50px auto;
-  text-indent: -9999em;
-  width: 11em;
-  height: 11em;
-  border-radius: 50%;
-  background: #4b4e4e;
-  background: -moz-linear-gradient(left, #4b4e4e 10%, rgba(75, 78, 78, 0) 42%);
-  background: -webkit-linear-gradient(
-    left,
-    #4b4e4e 10%,
-    rgba(75, 78, 78, 0) 42%
-  );
-  background: -o-linear-gradient(left, #4b4e4e 10%, rgba(75, 78, 78, 0) 42%);
-  background: -ms-linear-gradient(left, #4b4e4e 10%, rgba(75, 78, 78, 0) 42%);
-  background: linear-gradient(to right, #4b4e4e 10%, rgba(75, 78, 78, 0) 42%);
-  position: relative;
-  -webkit-animation: load3 1.4s infinite linear;
-  animation: load3 1.4s infinite linear;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-}
-.loader:before {
-  width: 50%;
-  height: 50%;
-  background: #4b4e4e;
-  border-radius: 100% 0 0 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-}
-.loader:after {
-  background: #eaecec;
-  width: 75%;
-  height: 75%;
-  border-radius: 50%;
-  content: "";
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-@-webkit-keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+  flex-wrap: wrap;
+  .left-panel {
+    flex: 0 1 200px;
+    background-color: #fefefe;
+    margin: 0px 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .left-panel-sections {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      .left-panel-sections-heading {
+        border-bottom: 1px solid #4b4e4e;
+      }
+      .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: wrap;
+        .btn-class {
+          color: black;
+          background-color: #b9e481;
+          border-radius: 5px;
+          padding: 5px;
+          margin: 10px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+  .right-panel {
+    flex: 3 3;
+    height: 100%;
+    margin: 0px 10px;
+    overflow: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    .card {
+      background-color: #fefefe;
+      height: 350px;
+      width: calc(25% - 20px);
+      margin: 0px 10px 20px;
+      padding: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        width: 100%;
+        background-color: #ece6e6;
+        .image-class {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .detail-container {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        .launch-detail-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
   }
 }
 
 @media only screen and (max-width: 700px) {
   .container {
     flex-direction: column;
-  }
-  .left-panel,
-  .right-panel {
-    width: 70%;
-    margin: 20px 0px;
-  }
-
-  .card {
-    width: 100%;
-    margin: 10px 0px;
+    align-items: center;
+    .left-panel,
+    .right-panel {
+      width: 70%;
+      margin: 20px 0px;
+    }
+    .right-panel {
+      .card {
+        width: 100%;
+        margin: 10px 0px;
+      }
+    }
   }
 }
 
 @media only screen and (min-width: 701px) and (max-width: 1024px) {
   .card {
-    width: calc(50% - 20px);
+    width: calc(50% - 20px) !important;
   }
 
   .card:first-child,
