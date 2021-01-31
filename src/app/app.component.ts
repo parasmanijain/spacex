@@ -31,12 +31,14 @@ export class AppComponent implements OnInit{
                   this.yearPressed = url.searchParams.get('launch_year');
                 }
                 if (this.launchPressed !== null) {
-                      this.appService.launchPressed.next(this.launchPressed);
-                      this.queryParams = {...this.queryParams, launch_success: this.launchPressed};
+                  this.launchPressed  = this.launchPressed === 'true';
+                  this.appService.launchPressed.next(this.launchPressed);
+                  this.queryParams = {...this.queryParams, launch_success: this.launchPressed};
                     }
                 if (this.landingPressed !== null) {
-                      this.appService.landingPressed.next(this.landingPressed);
-                      this.queryParams = {...this.queryParams, land_success: this.landingPressed};
+                  this.landingPressed  = this.landingPressed === 'true';
+                  this.appService.landingPressed.next(this.landingPressed);
+                  this.queryParams = {...this.queryParams, land_success: this.landingPressed};
                     }
                 if (this.yearPressed !== null) {
                       this.appService.yearPressed.next(this.yearPressed);
