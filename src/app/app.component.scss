@@ -20,7 +20,6 @@ footer {
 
 .container {
   position: relative;
-  box-sizing: border-box;
   display: flex;
   top: 50px;
   bottom: 50px;
@@ -36,11 +35,19 @@ footer {
     flex: 0 1 200px;
     background-color: #fefefe;
     margin: 0px 10px;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    .left-panel-heading {
+      font-size: 14px;
+      padding: 5px;
+      width: 100%;
+      font-weight: 700;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
     .left-panel-sections {
       display: flex;
       justify-content: space-between;
@@ -49,6 +56,7 @@ footer {
       width: 100%;
       .left-panel-sections-heading {
         border-bottom: 1px solid #4b4e4e;
+        font-size: 12px;
       }
       .button-container {
         display: flex;
@@ -75,7 +83,6 @@ footer {
     height: 100%;
     margin: 0px 10px;
     overflow: auto;
-    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -87,7 +94,6 @@ footer {
       width: calc(25% - 20px);
       margin: 0px 10px 20px;
       padding: 10px;
-      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       .image-container {
@@ -107,7 +113,7 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: space-evenly;
         .launch-detail-container {
           display: flex;
           justify-content: space-between;
