@@ -7,26 +7,36 @@
             <div class="left-panel-sections">
                 <div class="left-panel-sections-heading">Launch Year</div>
                 <div class="button-container">
+                    <div class="button-panel" *ngFor="let year of launchYears">
                         <button (click)="yearFilter(year)" [ngClass]="yearPressed === year ? 'pressed': ''"
-                        *ngFor="let year of launchYears"class="launch-button btn-class">{{year}}</button>
+                        class="launch-button btn-class">{{year}}</button>
+                    </div>
                 </div>
             </div>
             <div class="left-panel-sections">
                 <div class="left-panel-sections-heading">Successful Launch</div>
                 <div class="button-container">
+                    <div class="button-panel">
                         <button (click)="launchFilter(true)" [ngClass]="launchPressed === true ? 'pressed': ''"
                         class="btn-class">True</button>
+                    </div>
+                        <div class="button-panel">
                         <button (click)="launchFilter(false)" [ngClass]="launchPressed === false ? 'pressed': ''"
                         class="btn-class">False</button>
+                    </div>
                 </div>
             </div>
             <div class="left-panel-sections">
                 <div class="left-panel-sections-heading">Successful Landing</div>
                 <div class="button-container">
+                    <div class="button-panel">
                         <button (click)="landingFilter(true)" [ngClass]="landingPressed === true ? 'pressed': ''"
                         class="btn-class">True</button>
+                    </div>
+                    <div class="button-panel">
                         <button (click)="landingFilter(false)" [ngClass]="landingPressed === false ? 'pressed': ''"
                         class="btn-class">False</button>
+                    </div>
                 </div>
             </div>
         </div>
