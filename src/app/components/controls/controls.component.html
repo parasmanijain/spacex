@@ -11,31 +11,34 @@
                 </div>
             </div>
         </div>
-        <div class="left-panel-sections">
-            <div class="left-panel-sections-heading">Successful Launch</div>
-            <div class="button-container">
-                <div class="button-panel">
-                    <button (click)="launchFilter(true)" [ngClass]="launchPressed === true ? 'pressed': ''"
-                    class="btn-class">True</button>
-                </div>
+        <div class="launch-land-buttons-section">
+            <div class="left-panel-sections">
+                <div class="left-panel-sections-heading">Successful Launch</div>
+                <div class="button-container">
                     <div class="button-panel">
-                    <button (click)="launchFilter(false)" [ngClass]="launchPressed === false ? 'pressed': ''"
-                    class="btn-class">False</button>
+                        <button (click)="launchFilter(true)" [ngClass]="launchPressed === true ? 'pressed': ''"
+                        class="btn-class">True</button>
+                    </div>
+                        <div class="button-panel">
+                        <button (click)="launchFilter(false)" [ngClass]="launchPressed === false ? 'pressed': ''"
+                        class="btn-class">False</button>
+                    </div>
+                </div>
+            </div>
+            <div class="left-panel-sections">
+                <div class="left-panel-sections-heading">Successful Landing</div>
+                <div class="button-container">
+                    <div class="button-panel">
+                        <button (click)="landingFilter(true)" [ngClass]="landingPressed === true ? 'pressed': ''"
+                        class="btn-class">True</button>
+                    </div>
+                    <div class="button-panel">
+                        <button (click)="landingFilter(false)" [ngClass]="landingPressed === false ? 'pressed': ''"
+                        class="btn-class">False</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="left-panel-sections">
-            <div class="left-panel-sections-heading">Successful Landing</div>
-            <div class="button-container">
-                <div class="button-panel">
-                    <button (click)="landingFilter(true)" [ngClass]="landingPressed === true ? 'pressed': ''"
-                    class="btn-class">True</button>
-                </div>
-                <div class="button-panel">
-                    <button (click)="landingFilter(false)" [ngClass]="landingPressed === false ? 'pressed': ''"
-                    class="btn-class">False</button>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </div>
