@@ -31,69 +31,6 @@ footer {
   margin: 0 auto;
   align-items: flex-start;
   flex-wrap: wrap;
-  .left-panel {
-    flex: 0 1 200px;
-    background-color: #fefefe;
-    margin: 0px 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    .left-panel-heading {
-      font-size: 14px;
-      padding: 5px;
-      width: 100%;
-      font-weight: 700;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-    .control-sections {
-      width: 160px;
-      .left-panel-sections {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-        .left-panel-sections-heading {
-          border-bottom: 1px solid #4b4e4e;
-          font-size: 14px;
-        }
-        .button-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: row;
-          flex-wrap: wrap;
-          width: 100%;
-          .button-panel {
-            width: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 10px 0px;
-            .btn-class {
-              color: black;
-              background-color: #a8e994;
-              border-radius: 5px;
-              box-shadow: none;
-              border-color: #a8e994;
-              padding: 5px 10px;
-              &:hover {
-                cursor: pointer;
-              }
-            }
-          }
-
-          .pressed {
-            background-color: #86eb12 !important;
-            border-color: #86eb12 !important;
-          }
-        }
-      }
-    }
-  }
-
   .right-panel {
     flex: 3 3;
     height: 100%;
@@ -170,13 +107,9 @@ footer {
   .main-container {
     flex-direction: column;
     align-items: center;
-    .left-panel,
     .right-panel {
       width: 70%;
       margin: 5px 0px;
-    }
-    .left-panel {
-      margin-top: 0px !important;
     }
     .right-panel {
       margin-bottom: 0px !important;

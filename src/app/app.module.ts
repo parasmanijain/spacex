@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { LoaderComponent } from './components/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ControlsComponent } from './components/controls/controls.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoaderComponent
+    LoaderComponent,
+    ControlsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
