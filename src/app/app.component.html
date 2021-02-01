@@ -22,19 +22,9 @@
                 <ul>
                     <li *ngFor="let missionid of program.mission_id">{{missionid}}</li>
                 </ul>
-                <div class="launch-detail-container">
-                    <div class="label">Launch Year:</div>
-                    <div class="value">{{program.launch_year}}</div>              
-                </div>
-                <div class="launch-detail-container">
-                    <div class="label">Successful Launch:</div>
-                    <div class="value">{{program.launch_success}}</div>              
-                </div>
-                <div class="launch-detail-container">
-                    <div class="label">Succesful Landing:</div>
-                    <div class="value">{{program.launch_landing}}</div>              
-                </div>
-                
+                <app-launch-detail [label]="'Launch Year:'" [value]="program.launch_year"></app-launch-detail>
+                <app-launch-detail [label]="'Successful Launch:'" [value]="program.launch_success"></app-launch-detail>
+                <app-launch-detail [label]="'Succesful Landing:'" [value]="program.launch_landing"></app-launch-detail>
             </div>               
         </div>
     </div>

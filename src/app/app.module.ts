@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ControlsComponent } from './components/controls/controls.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LaunchDetailComponent } from './components/launch-detail/launch-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FooterComponent } from './components/footer/footer.component';
     LoaderComponent,
     ControlsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LaunchDetailComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

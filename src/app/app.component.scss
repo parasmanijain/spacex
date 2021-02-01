@@ -61,22 +61,8 @@
           font-size: 14px;
           font-weight: 700;
         }
-        .launch-detail-container {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
+        app-launch-detail {
           width: 100%;
-          .label {
-            font-size: 14px;
-            font-weight: 700;
-            margin: 0px 5px 0px 0px;
-            width: 50%;
-            text-align: left;
-          }
-          .value {
-            color: rgb(0, 132, 255);
-            font-size: 14px;
-          }
         }
       }
     }
