@@ -45,7 +45,8 @@
         <app-loader *ngIf="isLoadingData"></app-loader>
         <div class="card" *ngFor="let program of programs">
             <div class="image-container">
-                <img class="image-class" [alt]="program.mission_name" loading="lazy" [src]="program.links.mission_patch_small">
+                <img class="image-class" [alt]="program.mission_name" loading="lazy" 
+                [src]="smallScreen ? program.links.mission_patch_small : program.links.mission_patch">
             </div>
             <div class="detail-container">
                 <div class="mission-name">{{program.mission_name}} # {{program.flight_number}}</div>

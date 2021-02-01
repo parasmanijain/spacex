@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AppService } from '../app/app.service';
 import { IMission } from './interfaces/Mission';
 import { ActivatedRoute, Params, Router } from '@angular/router';
@@ -19,6 +20,7 @@ export class AppComponent implements OnInit, OnDestroy {
   landingPressed: any = null;
   launchPressed: any = null;
   yearPressed: any = null;
+  smallScreen = false;
 
   private landingPressedSubscription = new Subscription();
   private launchPressedSubscription = new Subscription ();
@@ -28,7 +30,8 @@ export class AppComponent implements OnInit, OnDestroy {
   data: any;
   constructor(private appService: AppService,
               private activatedRoute: ActivatedRoute,
-              private location: Location, private router: Router) {
+              private location: Location, private router: Router,
+              private breakpointObserver: BreakpointObserver) {
                 this.fetchYear();
                 if (typeof window !== 'undefined') {
                   const url = new URL(window.location.href);
@@ -69,7 +72,15 @@ export class AppComponent implements OnInit, OnDestroy {
         this.yearPressed = data;
       }
     });
-
+    this.breakpointObserver.observe([
+      '(max-width: 1024px)'
+        ]).subscribe(result => {
+          if (result.matches) {
+            this.smallScreen = true;
+          } else {
+            this.smallScreen = false;
+          }
+        });
   }
 
   landingFilter(flag: boolean): void {
