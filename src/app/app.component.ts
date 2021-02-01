@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Location } from '@angular/common';
+import { Subscription } from 'rxjs';
 import { AppService } from '../app/app.service';
 import { IMission } from './interfaces/Mission';
 import { ActivatedRoute, Params, Router } from '@angular/router';
@@ -9,7 +10,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy {
   title = 'SpaceX';
   programs = Array<IMission>();
   launchYears = Array<number>();
@@ -18,6 +19,11 @@ export class AppComponent implements OnInit{
   landingPressed: any = null;
   launchPressed: any = null;
   yearPressed: any = null;
+
+  private landingPressedSubscription = new Subscription();
+  private launchPressedSubscription = new Subscription ();
+  private yearPressedSubscription = new Subscription ();
+
   queryParams = {};
   data: any;
   constructor(private appService: AppService,
@@ -48,17 +54,17 @@ export class AppComponent implements OnInit{
                 }
 
   ngOnInit(): void {
-    this.appService.landingPressed.subscribe((data: null) => {
+    this.landingPressedSubscription = this.appService.landingPressed.subscribe((data: null) => {
       if (data !== null) {
         this.landingPressed = data;
       }
     });
-    this.appService.launchPressed.subscribe((data: null) => {
+    this.launchPressedSubscription = this.appService.launchPressed.subscribe((data: null) => {
       if (data !== null) {
         this.launchPressed = data;
       }
     });
-    this.appService.yearPressed.subscribe((data: null) => {
+    this.yearPressedSubscription = this.appService.yearPressed.subscribe((data: null) => {
       if (data !== null) {
         this.yearPressed = data;
       }
@@ -127,5 +133,17 @@ export class AppComponent implements OnInit{
         console.log(err);
         this.isLoadingYear = false;
       });
+  }
+
+  ngOnDestroy(): void {
+    if (this.landingPressedSubscription) {
+      this.landingPressedSubscription.unsubscribe();
+    }
+    if (this.launchPressedSubscription) {
+      this.launchPressedSubscription.unsubscribe();
+    }
+    if (this.yearPressedSubscription) {
+      this.yearPressedSubscription.unsubscribe();
+    }
   }
 }
