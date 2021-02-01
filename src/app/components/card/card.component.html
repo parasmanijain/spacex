@@ -1,7 +1,7 @@
 <div class="card" *ngFor="let program of programsData">
     <div class="image-container">
         <img class="image-class" [alt]="program.mission_name" loading="lazy" 
-        [src]="smallScreen ? program.links.mission_patch_small : program.links.mission_patch">
+        [src]="isSmallScreen ? program.links.mission_patch_small : program.links.mission_patch">
     </div>
     <div class="detail-container">
         <div class="mission-name">{{program.mission_name}} # {{program.flight_number}}</div>

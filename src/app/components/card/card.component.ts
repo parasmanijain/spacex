@@ -9,6 +9,7 @@ import { IMission } from '../../interfaces/Mission';
 export class CardComponent implements OnInit {
 
   programsData: Array<IMission> = [];
+  isSmallScreen!: boolean;
 
   @Input('programs')
   get programs(): Array<IMission> {
@@ -19,6 +20,14 @@ export class CardComponent implements OnInit {
     this.programsData = val;
   }
 
+  @Input('smallScreen')
+  get smallScreen(): boolean {
+    return this.isSmallScreen;
+  }
+
+  set smallScreen(val) {
+    this.isSmallScreen = val;
+  }
   constructor() { }
 
   ngOnInit(): void {

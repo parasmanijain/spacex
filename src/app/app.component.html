@@ -11,7 +11,7 @@
     ></app-controls>
     <div class="right-panel">
         <app-loader *ngIf="isLoadingData"></app-loader>
-        <app-card [programs]="programs"></app-card>
+        <app-card [smallScreen]="smallScreen" [programs]="programs"></app-card>
     </div>
 </div>
 <app-footer></app-footer>
