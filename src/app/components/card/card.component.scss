@@ -1,0 +1,63 @@
+.card {
+  background-color: #fefefe;
+  height: 350px;
+  width: calc(25% - 20px);
+  margin: 0px 10px 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
+    background-color: #ece6e6;
+    .image-class {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .detail-container {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    ul li {
+      color: rgb(0, 132, 255);
+      font-size: 14px;
+    }
+    .mission-name {
+      color: rgba(10, 99, 182, 0.774);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .mission-ids {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    app-launch-detail {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .card {
+    width: 100%;
+    margin: 10px 0px;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1024px) {
+  .card {
+    width: calc(50% - 20px) !important;
+  }
+
+  .card:first-child,
+  .card:nth-child(2) {
+    margin: 0px 10px 20px;
+  }
+}

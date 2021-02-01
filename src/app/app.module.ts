@@ -10,6 +10,7 @@ import { ControlsComponent } from './components/controls/controls.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LaunchDetailComponent } from './components/launch-detail/launch-detail.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LaunchDetailComponent } from './components/launch-detail/launch-detail.
     ControlsComponent,
     HeaderComponent,
     FooterComponent,
-    LaunchDetailComponent
+    LaunchDetailComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -11,22 +11,7 @@
     ></app-controls>
     <div class="right-panel">
         <app-loader *ngIf="isLoadingData"></app-loader>
-        <div class="card" *ngFor="let program of programs">
-            <div class="image-container">
-                <img class="image-class" [alt]="program.mission_name" loading="lazy" 
-                [src]="smallScreen ? program.links.mission_patch_small : program.links.mission_patch">
-            </div>
-            <div class="detail-container">
-                <div class="mission-name">{{program.mission_name}} # {{program.flight_number}}</div>
-                <div class="mission-ids">Mission Ids:</div>
-                <ul>
-                    <li *ngFor="let missionid of program.mission_id">{{missionid}}</li>
-                </ul>
-                <app-launch-detail [label]="'Launch Year:'" [value]="program.launch_year"></app-launch-detail>
-                <app-launch-detail [label]="'Successful Launch:'" [value]="program.launch_success"></app-launch-detail>
-                <app-launch-detail [label]="'Succesful Landing:'" [value]="program.launch_landing"></app-launch-detail>
-            </div>               
-        </div>
+        <app-card [programs]="programs"></app-card>
     </div>
 </div>
 <app-footer></app-footer>
