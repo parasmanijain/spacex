@@ -41,20 +41,21 @@
           margin: 10px 0px;
           .btn-class {
             color: black;
-            background-color: #a8e994;
+            background-color: #c5e09b;
             border-radius: 5px;
             box-shadow: none;
-            border-color: #a8e994;
+            border: none;
             padding: 5px 10px;
             &:hover {
               cursor: pointer;
+              background-color: #79ac28;
             }
           }
         }
 
         .pressed {
-          background-color: #86eb12 !important;
-          border-color: #86eb12 !important;
+          background-color: #79ac28 !important;
+          border-color: #79ac28 !important;
         }
       }
     }

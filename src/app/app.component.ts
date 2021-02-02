@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { AppService } from '../app/app.service';
 import { IMission } from './interfaces/Mission';
 import { ActivatedRoute, Params, Router } from '@angular/router';
