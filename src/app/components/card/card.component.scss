@@ -1,7 +1,6 @@
 .card {
   background-color: #fefefe;
   height: 350px;
-  width: calc(25% - 20px);
   margin: 0px 10px 20px;
   padding: 10px;
   display: flex;
@@ -41,23 +40,5 @@
     app-launch-detail {
       width: 100%;
     }
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .card {
-    width: 100%;
-    margin: 10px 0px;
-  }
-}
-
-@media only screen and (min-width: 701px) and (max-width: 1024px) {
-  .card {
-    width: calc(50% - 20px) !important;
-  }
-
-  .card:first-child,
-  .card:nth-child(2) {
-    margin: 0px 10px 20px;
   }
 }

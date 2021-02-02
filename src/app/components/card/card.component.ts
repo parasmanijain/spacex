@@ -9,16 +9,16 @@ import { IMission } from '../../interfaces/Mission';
 })
 export class CardComponent implements OnInit {
 
-  programsData: Array<IMission> = [];
+  program!: IMission;
   isSmallScreen!: boolean;
 
-  @Input('programs')
-  get programs(): Array<IMission> {
-    return this.programsData;
+  @Input('programData')
+  get programData(): IMission {
+    return this.program;
   }
 
-  set programs(val) {
-    this.programsData = val;
+  set programData(val) {
+    this.program = val;
   }
 
   @Input('smallScreen')

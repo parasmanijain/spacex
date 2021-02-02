@@ -11,7 +11,9 @@
     ></app-controls>
     <div class="right-panel">
         <app-loader *ngIf="isLoadingData"></app-loader>
-        <app-card [smallScreen]="smallScreen" [programs]="programs"></app-card>
+        <app-card *ngFor="let program of programs"
+        [smallScreen]="smallScreen"
+        [programData]="program"></app-card>
     </div>
 </div>
 <app-footer></app-footer>
