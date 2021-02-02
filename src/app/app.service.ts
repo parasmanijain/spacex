@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Params, ParamMap } from '@angular/router';
+import { Params } from '@angular/router';
 import { MAIN_URL } from './constants/constants';
 
 @Injectable({
