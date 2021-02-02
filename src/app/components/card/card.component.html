@@ -15,6 +15,6 @@
         </ul>
         <app-launch-detail [label]="'Launch Year:'" [value]="program.launch_year"></app-launch-detail>
         <app-launch-detail [label]="'Successful Launch:'" [value]="program.launch_success"></app-launch-detail>
-        <app-launch-detail [label]="'Succesful Landing:'" [value]="program.launch_landing"></app-launch-detail>
+        <app-launch-detail [label]="'Succesful Landing:'" [value]="program.launch_landing ? program.launch_landing : 'Not Available' "></app-launch-detail>
     </div>               
 </div>

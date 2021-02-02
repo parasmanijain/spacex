@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private launchPressedSubscription = new Subscription ();
   private yearPressedSubscription = new Subscription ();
 
-  queryParams = {};
+  queryParams: any = {};
   data: any;
   constructor(private appService: AppService,
               private activatedRoute: ActivatedRoute,
@@ -64,19 +64,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.landingPressedSubscription = this.appService.landingPressed.subscribe((data: null) => {
-      if (data !== null) {
         this.landingPressed = data;
-      }
     });
     this.launchPressedSubscription = this.appService.launchPressed.subscribe((data: null) => {
-      if (data !== null) {
         this.launchPressed = data;
-      }
     });
     this.yearPressedSubscription = this.appService.yearPressed.subscribe((data: null) => {
-      if (data !== null) {
         this.yearPressed = data;
-      }
     });
     this.breakpointObserver.observe([
       '(max-width: 1024px)'
@@ -90,19 +84,35 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   landingFilter(flag: boolean): void {
-    this.appService.landingPressed.next(flag);
-    this.queryParams = {...this.queryParams, land_success: flag};
+    if (flag === this.appService.landingPressed.getValue()) {
+      this.appService.landingPressed.next(null);
+      delete this.queryParams.land_success;
+    } else {
+      this.appService.landingPressed.next(flag);
+      this.queryParams = {...this.queryParams, land_success: flag};
+    }
     this.applyFilter(this.queryParams);
   }
+
   launchFilter(flag: boolean): void {
-    this.appService.launchPressed.next(flag);
-    this.queryParams = {...this.queryParams, launch_success: flag};
+    if (flag === this.appService.launchPressed.getValue()) {
+      this.appService.launchPressed.next(null);
+      delete this.queryParams.launch_success;
+    } else {
+      this.appService.launchPressed.next(flag);
+      this.queryParams = {...this.queryParams, launch_success: flag};
+    }
     this.applyFilter(this.queryParams);
   }
 
   yearFilter(flag: number): void {
-    this.appService.yearPressed.next(flag);
-    this.queryParams = {...this.queryParams, launch_year: flag};
+    if (flag === this.appService.yearPressed.getValue()) {
+      this.appService.yearPressed.next(null);
+      delete this.queryParams.launch_year;
+    } else {
+      this.appService.yearPressed.next(flag);
+      this.queryParams = {...this.queryParams, launch_year: flag};
+    }
     this.applyFilter(this.queryParams);
   }
 

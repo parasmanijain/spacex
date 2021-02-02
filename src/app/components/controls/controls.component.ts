@@ -69,5 +69,4 @@ export class ControlsComponent implements OnInit {
   landingFilter(flag: boolean): void {
     this.landingPressedEvt.emit(flag);
   }
-
 }
