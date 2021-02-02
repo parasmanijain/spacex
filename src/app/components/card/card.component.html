@@ -1,6 +1,10 @@
 <div class="card">
     <div class="image-container">
-        <img class="image-class" [alt]="program.mission_name" loading="lazy" 
+        <img class="image-class" 
+        [alt]="program.mission_name" 
+        loading="lazy" 
+        height="auto"
+        width="auto"
         [src]="isSmallScreen ? program.links.mission_patch_small : program.links.mission_patch">
     </div>
     <div class="detail-container">
