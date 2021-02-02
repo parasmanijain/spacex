@@ -8,7 +8,7 @@ Space X is deployed at https://spacexpp.herokuapp.com/
 
 ## Screenshots
 
-![Alt text](public\screenshots\700px and below.png?raw=true "Mobile Mode")
+![alt text](public/screenshots/700px and below.png)
 
 ## Creators
 
