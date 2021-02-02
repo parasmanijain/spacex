@@ -31,10 +31,13 @@
 
 @media only screen and (max-width: 700px) {
   .main-container {
+    height: unset !important;
+    top: unset !important;
+    bottom: unset !important;
     flex-direction: column;
     align-items: center;
     .right-panel {
-      width: 90vw;
+      width: 80vw;
       margin: 5px 0px;
     }
     .right-panel {
