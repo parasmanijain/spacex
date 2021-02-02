@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LaunchDetailComponent } from './components/launch-detail/launch-detail.component';
 import { CardComponent } from './components/card/card.component';
+import { LaunchLandingControlsComponent } from './components/launch-landing-controls/launch-landing-controls.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CardComponent } from './components/card/card.component';
     HeaderComponent,
     FooterComponent,
     LaunchDetailComponent,
-    CardComponent
+    CardComponent,
+    LaunchLandingControlsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
