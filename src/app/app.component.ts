@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Location } from '@angular/common';
-import { Subscription } from 'rxjs';
+import { Subscription, forkJoin } from 'rxjs';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { AppService } from '../app/app.service';
 import { IMission } from './interfaces/Mission';
@@ -33,7 +33,6 @@ export class AppComponent implements OnInit, OnDestroy {
               private activatedRoute: ActivatedRoute,
               private location: Location, private router: Router,
               private breakpointObserver: BreakpointObserver) {
-                this.fetchYear();
                 if (typeof window !== 'undefined') {
                   const url = new URL(window.location.href);
                   this.launchPressed = url.searchParams.get('launch_success');
@@ -54,7 +53,13 @@ export class AppComponent implements OnInit, OnDestroy {
                       this.appService.yearPressed.next(this.yearPressed);
                       this.queryParams = {...this.queryParams, launch_year: this.yearPressed};
                     }
-                this.fetchData(this.queryParams);
+
+                const yearList = this.appService.getData({});
+                const launches = this.appService.getData(this.queryParams);
+                forkJoin([yearList, launches]).subscribe(results => {
+                  this.updateYearList(results[0]);
+                  this.updateMissionList(results[1]);
+                });
                 }
 
   ngOnInit(): void {
@@ -109,42 +114,38 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   fetchData(params: Params): void {
-    let mission: IMission;
     this.isLoadingData = true;
-    this.programs = [];
     this.appService.getData(params).subscribe(res => {
       if (res && res.length) {
-          res.forEach((program: IMission) => {
-            mission = program;
-            this.programs.push(mission);
-          });
-        } else {
-          this.programs = [];
-        }
+        this.updateMissionList(res);
+      } else {
+        this.programs = [];
+      }
       this.isLoadingData = false;
-      },
-      err => {
-        console.log(err);
-        this.isLoadingData = false;
-      });
+    },
+    err => {
+      console.log(err);
+      this.isLoadingData = false;
+    });
   }
 
-  fetchYear(): void {
-    this.isLoadingYear = true;
-    const set = new Set<number>();
-    this.appService.getData({}).subscribe(res => {
-        if (res && res.length) {
-          res.forEach((program: IMission) => {
-            set.add(program.launch_year);
-          });
-          this.launchYears = [...set];
-          this.isLoadingYear = false;
-        }
-      },
-      err => {
-        console.log(err);
-        this.isLoadingYear = false;
+  updateMissionList(results: Array<IMission>): void {
+    let mission: IMission;
+    this.programs = [];
+    results.forEach((program: IMission) => {
+      mission = program;
+      this.programs.push(mission);
+    });
+  }
+
+  updateYearList(results: Array<IMission>): void {
+    if (results && results.length) {
+      const set = new Set<number>();
+      results.forEach((program: IMission) => {
+        set.add(program.launch_year);
       });
+      this.launchYears = [...set];
+    }
   }
 
   ngOnDestroy(): void {
