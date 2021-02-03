@@ -1,6 +1,6 @@
 .card {
   background-color: #fefefe;
-  height: 400px;
+  height: 450px;
   margin: 0px 10px 20px;
   padding: 20px;
   display: flex;
@@ -9,14 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60%;
-    width: 100%;
     margin: 0 auto;
     background-color: #ece6e6;
-    .image-class {
-      width: 100%;
-      height: 100%;
-    }
   }
   .detail-container {
     height: 50%;
@@ -25,7 +19,7 @@
     align-items: flex-start;
     justify-content: space-evenly;
     ul li {
-      color: rgb(0, 132, 255);
+      color: #464e8e;
       font-size: 14px;
     }
     .mission-name {
