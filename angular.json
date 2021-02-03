@@ -131,6 +131,7 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/SpaceX/server",
+            "optimization": true,
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
