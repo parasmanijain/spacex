@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://spacexpp.herokuapp.com/sitemap.xml
